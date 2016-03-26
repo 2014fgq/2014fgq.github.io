@@ -1,0 +1,3 @@
+# UITableViewController
+- 父类是UIViewController
+- 默认会创建tableView，并让其成为自身成员变量，就算把storyboard中的tableView删掉也会运行，只是没法通过storyboard直接设置UITableView和UITableViewCell的属性

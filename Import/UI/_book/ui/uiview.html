@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>UIView | XMG</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="../uiviewcontroller/README.html" />
+    
+    
+    <link rel="prev" href="../nsobject/uiresponder.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="1.3.1" data-basepath=".." data-revision="1456708040086">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="nsobject/README.html">
+            
+                
+                    <a href="../nsobject/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         NSObject
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="uiimage/README.html">
+            
+                
+                    <a href="../uiimage/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         UIImage
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="avplayer/README.html">
+            
+                
+                    <a href="../avplayer/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         AVPlayer
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="nsobject/uiresponder.html">
+            
+                
+                    <a href="../nsobject/uiresponder.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         UIResponder
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="1.3.1" data-path="ui/uiview.html">
+            
+                
+                    <a href="../ui/uiview.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                         UIView
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3.2" data-path="uiviewcontroller/README.html">
+            
+                
+                    <a href="../uiviewcontroller/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                         UIViewController
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >XMG</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_37">
+                    
+                        <h1 id="uiview">UIView</h1>
+<h1 id="uiview">UIView</h1>
+<ul>
+<li><p>什么是控件？</p>
+<ul>
+<li>屏幕上的所有UI元素都叫做控件，也有人叫做视图、组件
+按钮（UIButton）、文本（UILabel）都是控件</li>
+<li>所有的控件最终都继承自UIView</li>
+</ul>
+</li>
+<li><p>控件的共同属性有哪些？</p>
+<ul>
+<li>尺寸</li>
+<li>位置</li>
+<li>背景色</li>
+<li>......</li>
+</ul>
+</li>
+</ul>
+<h2 id="">父子控件（自定义控件基础）</h2>
+<ul>
+<li><p>每个控件都是个容器，能容纳其他控件</p>
+<ul>
+<li>内部小控件是大控件的子控件</li>
+<li>大控件是内部小控件的父控件</li>
+</ul>
+</li>
+<li><h3 id="">父子控件属性及方法</h3>
+<ul>
+<li><h4 id="">常用属性</h4>
+<ul>
+<li><p>superview：获得自己的父控件对象</p>
+<ul>
+<li><code>每个子控件的superview只有一个，只读</code><pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,<span class="hljs-keyword">readonly</span>) <span class="hljs-built_in">UIView</span> *superview;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>subviews：获得自己的所有子控件对象</p>
+<ul>
+<li><code>subviews是一个数组，只读</code><pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,<span class="hljs-keyword">readonly</span>,<span class="hljs-keyword">copy</span>) <span class="hljs-built_in">NSArray</span> *subviews;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>tag：控件的ID(标识)，父控件可以通过tag来找到对应的子控件</p>
+<ul>
+<li><code>tag值是随意设置，很容易混乱，能不用就不用</code><pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">NSInteger</span> tag;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="">常用方法</h4>
+<ul>
+<li><p>addSubview：添加一个子控件view</p>
+<pre><code class="lang-objc">-(<span class="hljs-keyword">void</span>)addSubview:(<span class="hljs-built_in">UIView</span> *)view;
+</code></pre>
+</li>
+<li><p>removeFromSuperview：从父控件中移除</p>
+<pre><code class="lang-objc">-(<span class="hljs-keyword">void</span>)removeFromSuperview;
+</code></pre>
+</li>
+<li><p>viewWithTag：根据一个tag标识找出对应的控件（一般都是子控件）</p>
+<pre><code class="lang-objc">-(<span class="hljs-built_in">UIView</span> *)viewWithTag:(<span class="hljs-built_in">NSInteger</span>)tag;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="uiview">UIView位置、尺寸属性</h2>
+<ul>
+<li><p>frame：控件矩形框在父控件中的位置和尺寸(以父控件的左上角为坐标原点)</p>
+<pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">CGRect</span> frame;
+</code></pre>
+</li>
+<li><p>bounds：控件矩形框的位置和尺寸(以自己左上角为坐标原点，所以bounds的x、y一般为0)</p>
+<ul>
+<li>调整bounds的x,y值没有效果。设置bounds伸缩是以中心点为基准伸缩的<pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">CGRect</span> bounds;
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>center：控件中点的位置(以父控件的左上角为坐标原点)</p>
+<pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">CGPoint</span> center;
+</code></pre>
+</li>
+<li><p>transform：控件的形变属性(可以设置旋转角度、比例缩放、平移等属性)</p>
+<ul>
+<li>功能强大<pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) CGAffineTransform transform;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../nsobject/uiresponder.html" class="navigation navigation-prev " aria-label="Previous page: UIResponder"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../uiviewcontroller/README.html" class="navigation navigation-next " aria-label="Next page: UIViewController"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
