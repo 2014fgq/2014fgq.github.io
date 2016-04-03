@@ -61,7 +61,7 @@
         data-chapter-title="喜马拉雅-简单版"
         data-filepath="喜马拉雅-简单版/README.md"
         data-basepath=".."
-        data-revision="Wed Mar 30 2016 20:31:21 GMT-0700 (PDT)"
+        data-revision="Sat Apr 02 2016 18:23:07 GMT-0700 (PDT)"
         data-innerlanguage="">
     
 
@@ -304,46 +304,93 @@
                         <p>1&#x3001;06&#x559C;&#x9A6C;&#x62C9;&#x96C5;&#x6848;&#x4F8B;01</p>
 <ul>
 <li><p>&#x6548;&#x679C;&#x56FE;</p>
+<ul>
+<li><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459641249552.png" alt="abc"></li>
+</ul>
 </li>
 <li><p>&#x5229;&#x7528;xib&#x62D6;&#x5165;scrollerview&#xFF0C;&#x548C;&#x51E0;&#x5F20;UIImage</p>
 </li>
 </ul>
 <p>2&#x3001;07&#x559C;&#x9A6C;&#x62C9;&#x96C5;&#x6848;&#x4F8B;02</p>
 <ul>
-<li>&#x5229;&#x7528;xib&#x62D6;&#x5165;&#x4E0B;&#x9762;&#x56FE;&#x7247;</li>
-<li>&#x8BA1;&#x7B97;contentsize</li>
+<li><p>&#x5229;&#x7528;xib&#x62D6;&#x5165;&#x4E0B;&#x9762;&#x56FE;&#x7247;</p>
+<ul>
+<li><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459642158852.png" alt=""></li>
+</ul>
+</li>
+<li><p>&#x8BA1;&#x7B97;contentsize</p>
+</li>
+</ul>
+<pre><code>- (void)viewDidLoad {
+  [super viewDidLoad];
+  CGFloat maxH = CGRectGetMaxY(self.lastImgView.frame);
+  //&#x8BBE;&#x7F6E;UIScrollView&#x7684;contentSize
+  self.scrollView.contentSize = CGSizeMake(0, MaxH);
+}
+</code></pre><ul>
 <li>&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x504F;&#x79FB;</li>
+</ul>
+<pre><code>  //&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x6EDA;&#x52A8;&#x4F4D;&#x7F6E;
+  self.scrollView.contentOffset = CGPointMake(0, -74);
+</code></pre><ul>
 <li>&#x8BBE;&#x7F6E;&#x5411;&#x4E0A;&#x5185;&#x8FB9;&#x8DDD;</li>
+</ul>
+<pre><code>  //&#x8BBE;&#x7F6E;&#x4E0A;&#x8FB9;&#x8DDD;&#x4E3A;74
+  self.scrollView.contentInset = UIEdgeInsetsMake(74, 0, 0, 0);
+</code></pre><ul>
 <li>&#x5229;&#x7528;xib&#x5B9E;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x90E8;&#x5206;</li>
 </ul>
+<p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459643927234.png" alt=""></p>
 <p>3&#x3001;11&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;01-&#x5B9E;&#x73B0;&#x6A2A;&#x5411;&#x6EDA;&#x52A8;</p>
 <ul>
-<li><p>&#x6548;&#x679C;</p>
+<li><p>&#x6548;&#x679C;
+<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459644067792.png" alt=""></p>
 </li>
-<li><p>&#x52A0;&#x5165;5&#x5F20;&#x56FE;&#x7247;&#xFF0C;UIImage,&#x5E76;&#x4E14;&#x8BA1;&#x7B97;contentsize&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x80FD;&#x5206;&#x9875;&#x6548;&#x679C;</p>
+<li><p>&#x52A0;&#x5165;5&#x5F20;&#x56FE;&#x7247;&#xFF0C;UIImage,&#x5E76;&#x4E14;&#x8BA1;&#x7B97;contentsize&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x80FD;&#x5206;&#x9875;&#x6548;&#x679C;
+<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459644679769.png" alt=""></p>
 </li>
 <li><p>&#x9690;&#x85CF;&#x6EDA;&#x52A8;&#x6307;&#x793A;&#x5668;</p>
+<ul>
+<li><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459644758649.png" alt=""></li>
+</ul>
 </li>
 </ul>
 <p>4&#x3001;12&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;02-&#x5B9E;&#x73B0;&#x5206;&#x9875;&#x6307;&#x793A;&#x5668;</p>
 <ul>
-<li><p>&#x6DFB;&#x52A0;&#x5206;&#x9875;&#x5668;</p>
+<li><p>&#x6DFB;&#x52A0;&#x5206;&#x9875;&#x5668;<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459644865413.png" alt=""></p>
+<ul>
+<li><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645230138.png" width="210"></li>
+</ul>
 </li>
-<li><p>&#x8BA1;&#x7B97;&#x6EDA;&#x52A8;&#x91CF;&#xFF0C;&#x8BBE;&#x7F6E;pagecontrol</p>
+<li><p>&#x8BA1;&#x7B97;&#x6EDA;&#x52A8;&#x91CF;&#xFF0C;&#x8BBE;&#x7F6E;pagecontrol
+<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645311891.png" width="279"></p>
 </li>
-<li><p>&#x6EDA;&#x52A8;&#x5230;&#x4E00;&#x534A;&#x7684;&#x65F6;&#x5019;&#xFF0C;pagecontrol&#x5C31;&#x5E94;&#x8BE5;&#x5207;&#x6362;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x9875;</p>
-</li>
+</ul>
+<p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645690870.png" width="393"></p>
+<ul>
+<li>&#x6EDA;&#x52A8;&#x5230;&#x4E00;&#x534A;&#x7684;&#x65F6;&#x5019;&#xFF0C;pagecontrol&#x5C31;&#x5E94;&#x8BE5;&#x5207;&#x6362;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x9875;
+<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645754865.png" width="307"></li>
 </ul>
 <p>5&#x3001;13&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;03-&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x6EDA;&#x52A8;</p>
 <ul>
 <li>&#x5728;viewdid&#x52A0;&#x5165;&#x5B9A;&#x65F6;&#x5668;</li>
 </ul>
-<p>6&#x3001;14&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;04-&#x4FEE;&#x6B63;Bug</p>
+<p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645790305.png" width="400"></p>
+<p>6&#x3001;14&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;04-&#x4FEE;&#x6B63;Bug
+<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645833822.png" width="261"></p>
+<p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645857349.png" width="398"></p>
 <ul>
-<li>&#x5F53;&#x591A;&#x4E2A;scroll&#x5728;&#x540C;&#x4E00;&#x4E2A;controller&#x91CC;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x76F4;&#x62D6;&#x52A8;&#x53E6;&#x5916;&#x4E00;&#x4E2A;scrollview&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5C31;&#x4E0D;&#x4F1A;&#x5904;&#x7406;timer&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;timer&#x7684;&#x4F18;&#x5148;&#x7EA7;</li>
+<li><p>&#x5F53;&#x591A;&#x4E2A;scroll&#x5728;&#x540C;&#x4E00;&#x4E2A;controller&#x91CC;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x76F4;&#x62D6;&#x52A8;&#x53E6;&#x5916;&#x4E00;&#x4E2A;scrollview&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5C31;&#x4E0D;&#x4F1A;&#x5904;&#x7406;timer&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;timer&#x7684;&#x4F18;&#x5148;&#x7EA7;</p>
+<ul>
+<li><p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645886837.png" width="158"></p>
+</li>
+<li><p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645901063.png" width="355"></p>
+</li>
+</ul>
+</li>
 </ul>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x7FFB;&#x8FD9;&#x4E2A;&#x5899; 2016 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2016-03-30 19:58:14
+2016-04-02 18:19:39
 </span></footer>
                     
                     </section>
