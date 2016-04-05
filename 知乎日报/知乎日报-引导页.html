@@ -61,7 +61,7 @@
         data-chapter-title="知乎日报-引导页"
         data-filepath="知乎日报/知乎日报-引导页.md"
         data-basepath=".."
-        data-revision="Sun Apr 03 2016 23:44:28 GMT-0700 (PDT)"
+        data-revision="Mon Apr 04 2016 23:33:08 GMT-0700 (PDT)"
         data-innerlanguage="">
     
 
@@ -302,6 +302,7 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="&#x5F15;&#x5BFC;&#x9875;">&#x5F15;&#x5BFC;&#x9875;</h1>
+<p><img src="&#x542F;&#x52A8;&#x9875;.gif" alt=""></p>
 <h2 id="&#x5305;&#x542B;&#x6587;&#x4EF6;">&#x5305;&#x542B;&#x6587;&#x4EF6;</h2>
 <ul>
 <li>AppDelegate.h, AppDelegate.m</li>
@@ -310,22 +311,16 @@
 <p>1&#x3001;&#x7B80;&#x5355;&#x529F;&#x80FD;</p>
 <ul>
 <li>&#x8BBE;&#x7F6E;App&#x7684;&#x5E95;&#x8272;&#x4E3A;&#x767D;&#x8272;</li>
-<li>&#x5206;&#x914D;MainViewController,&#x5E76;&#x914D;&#x7F6E;HomeViewController, LeftMenuViewController</li>
-<li>&#x8BBE;&#x7F6E;&#x5BFC;&#x822A;&#x6A21;&#x5F0F;,&#x914D;&#x7F6E;RootViewController&#x4E3A;MainViewController</li>
+<li><a href="&#x77E5;&#x4E4E;&#x65E5;&#x62A5;-&#x4E3B;&#x9875;.html">&#x52A0;&#x8F7D;&#x4E3B;&#x9875;&#x9762;</a></li>
 <li><strong>&#x9690;&#x85CF;navigationBarHidden</strong>, <strong>&#x8BBE;&#x7F6E;&#x72B6;&#x6001;&#x680F;&#x7684;&#x6837;&#x8272;&#x4E3A;UIStatusBarStyleLightContent</strong></li>
 <li>&#x8C03;&#x7528;&#x5F15;&#x5BFC;&#x6548;&#x679C;</li>
 </ul>
-<pre>
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
     self.window = [[UIWindow alloc] initWithFrame:kScreenBounds];
-    self.window.backgroundColor = [UIColor whiteColor];
-    LeftMenuViewController *leftMenuVC = [[LeftMenuViewController alloc] initWithNibName:@&quot;LeftMenuViewController&quot; bundle:[NSBundle mainBundle]];
-    HomeViewController *homeVC = [[HomeViewController alloc] initWithViewModel:[HomeViewModel new]];
-    _mainVC = [[MainViewController alloc] initWithLeftMenuViewController:leftMenuVC andHomeViewController:homeVC];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:_mainVC];
-    self.window.rootViewController = navigationController;
+    self.window.backgroundColor = [UIColor whiteColor]&#xFF1B;
+    &#x3002;&#x3002;&#x3002;//&#x52A0;&#x8F7D;&#x4E3B;&#x9875;&#x9762;
     [self.window makeKeyAndVisible];
     navigationController.navigationBarHidden = YES;
 
@@ -333,9 +328,7 @@
     [self setLauchView];
     return YES;
 }
-</pre>
-
-<p>2&#x3001;&#x5F15;&#x5BFC;&#x6548;&#x679C;</p>
+</code></pre><p>2&#x3001;&#x5F15;&#x5BFC;&#x6548;&#x679C;&#xFF08;&#x91CD;&#x70B9;&#xFF09;</p>
 <ul>
 <li>&#x521B;&#x5EFA;UIImageView&#xFF08;_launchImaViewT&#xFF09;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#x5168;&#x5C4F;</li>
 <li>&#x521B;&#x5EFA;UIImageView&#xFF08;_launchImaViewO&#xFF09;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#x5168;&#x5C4F;&#xFF0C;&#x9ED8;&#x8BA4;&#x56FE;&#x7247;&#x4E3A;Default@2x.png,_launchImaViewO&#x906E;&#x76D6;_launchImaViewT</li>
@@ -388,7 +381,7 @@
 </pre> 
 
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x7FFB;&#x8FD9;&#x4E2A;&#x5899; 2016 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2016-03-29 20:27:22
+2016-04-04 23:33:07
 </span></footer>
                     
                     </section>
