@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>知乎日报-引导页 | Introduction</title>
+        <title>知乎日报-Home页_tableviewcell部分.md | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../知乎日报/知乎日报-主页.html" />
+    <link rel="next" href="../知乎日报/知乎日报-Home-跳转详细页.html" />
     
     
-    <link rel="prev" href="../知乎日报/知乎日报-API.html" />
+    <link rel="prev" href="../知乎日报/知乎日报-Home页.html" />
     
 
         
@@ -57,9 +57,9 @@
         
         
     <div class="book"
-        data-level="1.2"
-        data-chapter-title="知乎日报-引导页"
-        data-filepath="知乎日报/知乎日报-引导页.md"
+        data-level="1.5"
+        data-chapter-title="知乎日报-Home页_tableviewcell部分.md"
+        data-filepath="知乎日报/知乎日报-Home页_tableviewcell部分.md"
         data-basepath=".."
         data-revision="Wed Apr 06 2016 00:43:59 GMT-0700 (PDT)"
         data-innerlanguage="">
@@ -128,7 +128,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="知乎日报/知乎日报-引导页.html">
+        <li class="chapter " data-level="1.2" data-path="知乎日报/知乎日报-引导页.html">
             
                 
                     <a href="../知乎日报/知乎日报-引导页.html">
@@ -173,7 +173,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="知乎日报/知乎日报-Home页_tableviewcell部分.html">
+        <li class="chapter active" data-level="1.5" data-path="知乎日报/知乎日报-Home页_tableviewcell部分.html">
             
                 
                     <a href="../知乎日报/知乎日报-Home页_tableviewcell部分.html">
@@ -376,87 +376,75 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="&#x5F15;&#x5BFC;&#x9875;">&#x5F15;&#x5BFC;&#x9875;</h1>
-<p><img src="&#x542F;&#x52A8;&#x9875;.gif" alt=""></p>
-<h2 id="&#x5305;&#x542B;&#x6587;&#x4EF6;">&#x5305;&#x542B;&#x6587;&#x4EF6;</h2>
+                        <h1 id="&#x77E5;&#x4E4E;&#x65E5;&#x62A5;hometableviewcell&#x90E8;&#x5206;">&#x77E5;&#x4E4E;&#x65E5;&#x62A5;-Home-tableviewcell&#x90E8;&#x5206;</h1>
+<h2 id="1&#x3001;&#x5305;&#x542B;&#x6587;&#x4EF6;">1&#x3001;&#x5305;&#x542B;&#x6587;&#x4EF6;</h2>
 <ul>
-<li>AppDelegate.h, AppDelegate.m</li>
+<li>HomeViewController.h, HomeViewController.m</li>
+<li>HomeViewModel.h, HomeViewModel.m</li>
+<li>StoryModel.h, StoryModel.m</li>
+<li>CarouseView.h, CarouseView.m</li>
+<li>HomeViewCell.h, HomeViewCell.m</li>
+<li>SectionTitleView.h, SectionTitleView.m</li>
+<li>RefreshView.h, RefreshView.m</li>
+<li>TopStoryView.h, TopStoryView.m</li>
 </ul>
-<h2 id="&#x5B9E;&#x73B0;&#x529F;&#x80FD;">&#x5B9E;&#x73B0;&#x529F;&#x80FD;</h2>
-<p>1&#x3001;&#x7B80;&#x5355;&#x529F;&#x80FD;</p>
-<ul>
-<li>&#x8BBE;&#x7F6E;App&#x7684;&#x5E95;&#x8272;&#x4E3A;&#x767D;&#x8272;</li>
-<li><a href="&#x77E5;&#x4E4E;&#x65E5;&#x62A5;-&#x4E3B;&#x9875;.html">&#x52A0;&#x8F7D;&#x4E3B;&#x9875;&#x9762;</a></li>
-<li><strong>&#x9690;&#x85CF;navigationBarHidden</strong>, <strong>&#x8BBE;&#x7F6E;&#x72B6;&#x6001;&#x680F;&#x7684;&#x6837;&#x8272;&#x4E3A;UIStatusBarStyleLightContent</strong></li>
-<li>&#x8C03;&#x7528;&#x5F15;&#x5BFC;&#x6548;&#x679C;</li>
-</ul>
-<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-
-    self.window = [[UIWindow alloc] initWithFrame:kScreenBounds];
-    self.window.backgroundColor = [UIColor whiteColor]&#xFF1B;
-    &#x3002;&#x3002;&#x3002;//&#x52A0;&#x8F7D;&#x4E3B;&#x9875;&#x9762;
-    [self.window makeKeyAndVisible];
-    navigationController.navigationBarHidden = YES;
-
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [self setLauchView];
-    return YES;
+<h2 id="2&#x3001;&#x6570;&#x636E;&#x5237;&#x65B0;">2&#x3001;&#x6570;&#x636E;&#x5237;&#x65B0;</h2>
+<pre><code>- (instancetype)initWithViewModel:(HomeViewModel *)vm {
+    self = [super init];
+    if (self) {
+        self.viewmodel = vm;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingLatestDaily:) name:@&quot;LoadLatestDaily&quot; object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadingPreviousDaily:) name:@&quot;LoadPreviousDaily&quot; object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateLatestDaily:) name:@&quot;UpdateLatestDaily&quot; object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mainScrollViewToTop:) name:@&quot;TapStatusBar&quot; object:nil];
+        [self.viewmodel getLatestStories];
+    }
+    return self;
 }
-</code></pre><p>2&#x3001;&#x5F15;&#x5BFC;&#x6548;&#x679C;&#xFF08;&#x91CD;&#x70B9;&#xFF09;</p>
+</code></pre><h2 id="3&#x3001;ui&#x52A0;&#x8F7D;">3&#x3001;UI&#x52A0;&#x8F7D;</h2>
 <ul>
-<li>&#x521B;&#x5EFA;UIImageView&#xFF08;_launchImaViewT&#xFF09;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#x5168;&#x5C4F;</li>
-<li>&#x521B;&#x5EFA;UIImageView&#xFF08;_launchImaViewO&#xFF09;&#xFF0C;&#x5927;&#x5C0F;&#x4E3A;&#x5168;&#x5C4F;&#xFF0C;&#x9ED8;&#x8BA4;&#x56FE;&#x7247;&#x4E3A;Default@2x.png,_launchImaViewO&#x906E;&#x76D6;_launchImaViewT</li>
-<li>&#x83B7;&#x53D6;<a href="http://news-at.zhihu.com/api/4/start-image/720*1184" target="_blank">&#x7F51;&#x7EDC;&#x56FE;&#x7247;</a>&#xFF0C;&#x5982;&#x679C;&#x6210;&#x529F;&#xFF0C;_launchImaViewT&#x52A0;&#x8F7D;&#x8BE5;&#x56FE;&#x7247;&#xFF0C;&#x5E76;&#x7528;2&#x79D2;&#x52A8;&#x753B;&#x6548;&#x679C;&#x663E;&#x793A;&#xFF0C;&#x5C06;_launchImaViewO&#x8BBE;&#x7F6E;&#x4E3A;&#x5168;&#x900F;&#x660E;</li>
-<li>&#x52A8;&#x753B;&#x6267;&#x884C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x79FB;&#x9664;_launchImaViewO&#xFF0C;_launchImaViewT</li>
+<li>&#x521B;&#x5EFA;UITableView&#xFF0C;frame&#x4E3A;&#xFF08;0, 20, &#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;&#xFF0C; &#x5C4F;&#x5E55;&#x9AD8;&#x5EA6;-20&#xFF09;, &#x5176;&#x4E2D;<strong>20</strong>&#x662F;&#x7CFB;&#x7EDF;&#x72B6;&#x6001;&#x680F;&#x9AD8;&#x5EA6;</li>
 </ul>
-<pre>
-@property(strong,nonatomic) UIImageView *launchImaViewO;
-@property(strong,nonatomic) UIImageView *launchImaViewT;
+<pre><code>- (void)initSubViews {
+    float tvOffset = 20.f;//20.f;
+    UITableView *tv = [[UITableView alloc] initWithFrame:CGRectMake(0.f, tvOffset, kScreenWidth, kScreenHeight-tvOffset)];
+    tv.delegate = self;
+    tv.dataSource = self;
+    tv.rowHeight = kRowHeight;
+    tv.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, kScreenWidth, 200.f)];
+    [self.view addSubview:tv];
+    _mainTableView = tv;
 
-- (void)setLauchView {
-    _launchImaViewT = [[UIImageView alloc] initWithFrame:kScreenBounds];
-    _launchImaViewT.contentMode = UIViewContentModeScaleAspectFill;
-    [self.window addSubview:_launchImaViewT];
+    //&#x6EDA;&#x52A8;&#x89C6;&#x56FE;(CarouseView) &#x7684;&#x521B;&#x5EFA;&#x52A0;&#x8F7D;
+    //&#x4EFF;navigationview &#x7684;&#x521B;&#x5EFA;&#x52A0;&#x8F7D;
+    //&quot;&#x4ECA;&#x65E5;&#x65B0;&#x95FB;&quot;        &#x7684;&#x521B;&#x5EFA;&#x52A0;&#x8F7D;
+    //RefreshView      &#x7684;&#x521B;&#x5EFA;&#x52A0;&#x8F7D;
+    //menuBtn          &#x7684;&#x521B;&#x5EFA;&#x52A0;&#x8F7D;
 
-    _launchImaViewO = [[UIImageView alloc] initWithFrame:kScreenBounds];
-    _launchImaViewO.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@&quot;Default@2x&quot; ofType:@&quot;png&quot;]];
-    [self.window addSubview:_launchImaViewO];
-
-    [HttpOperation getRequestWithURL:@&quot;start-image/720*1184&quot; parameters:nil success:^(id responseObject) {
-        [_launchImaViewT sd_setImageWithURL:[NSURL URLWithString:responseObject[@&quot;img&quot;]]];
-        [UIView animateWithDuration:2.0f animations:^{
-            _launchImaViewO.alpha = 0.f;
-            _launchImaViewT.transform = CGAffineTransformMakeScale(1.2, 1.2);
-        } completion:^(BOOL finished) {
-            [_launchImaViewO removeFromSuperview];
-            [_launchImaViewT removeFromSuperview];
-        }];
-    } failure:nil];
+    [_mainTableView registerNib:[UINib nibWithNibName:@&quot;HomeViewCell&quot; bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@&quot;HomeViewCell&quot;];
+    [_mainTableView registerClass:[SectionTitleView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([SectionTitleView class])];
 }
-</pre>
+</code></pre><h2 id="4&#x3001;&#x81EA;&#x5B9A;&#x4E49;uitableviewcell">4&#x3001;&#x81EA;&#x5B9A;&#x4E49;UITableViewCell</h2>
+<pre><code>#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.viewmodel numberOfSections];
+}
 
-<blockquote>
-<p>&#x8FD9;&#x91CC;&#x9762;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x679C;&#x83B7;&#x53D6;&#x56FE;&#x7247;&#x5931;&#x8D25;&#xFF08;&#x6CA1;&#x6709;&#x7F51;&#x7EDC;&#x7B49;&#xFF09;,&#x4F1A;&#x4E00;&#x76F4;&#x963B;&#x585E;&#x5728;&#x5F15;&#x5BFC;&#x9875;&#x9762;&#x3002;</p>
-</blockquote>
-<ul>
-<li>&#x6DFB;&#x52A0;&#x6761;&#x4EF6;,&#x5982;&#x679C;&#x83B7;&#x53D6;&#x5931;&#x8D25;&#xFF0C;&#x5219;&#x4F7F;&#x7528;_launchImaViewO&#x8FDB;&#x884C;&#x52A8;&#x753B;&#x6548;&#x679C;</li>
-</ul>
-<pre>
-    &#x3002;&#x3002;&#x3002;
-    } failure:^(NSError *error)
-    {
-        [UIView animateWithDuration:2.0f animations:^{
-            _launchImaViewO.transform = CGAffineTransformMakeScale(1.2, 1.2);
-        } completion:^(BOOL finished) {
-            [_launchImaViewO removeFromSuperview];
-            [_launchImaViewT removeFromSuperview];
-        }];
-    }];
-</pre> 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.viewmodel numberOfRowsInSection:section];
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @&quot;HomeViewCell&quot;;
+    HomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    StoryModel *story = [self.viewmodel storyAtIndexPath:indexPath];
+    [cell setStoryModel:story];
+    return cell;
+}
+</code></pre><h2 id="5&#x3001;&#x81EA;&#x5B9A;&#x4E49;headerview">5&#x3001;<a href="&#x77E5;&#x4E4E;&#x65E5;&#x62A5;-Home-HeaderView.md">&#x81EA;&#x5B9A;&#x4E49;headerview</a></h2>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x7FFB;&#x8FD9;&#x4E2A;&#x5899; 2016 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2016-04-04 23:33:07
+2016-04-05 23:42:11
 </span></footer>
                     
                     </section>
@@ -467,10 +455,10 @@
         </div>
 
         
-        <a href="../知乎日报/知乎日报-API.html" class="navigation navigation-prev " aria-label="Previous page: 知乎日报-API"><i class="fa fa-angle-left"></i></a>
+        <a href="../知乎日报/知乎日报-Home页.html" class="navigation navigation-prev " aria-label="Previous page: 知乎日报-Home页"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../知乎日报/知乎日报-主页.html" class="navigation navigation-next " aria-label="Next page: 知乎日报-主页"><i class="fa fa-angle-right"></i></a>
+        <a href="../知乎日报/知乎日报-Home-跳转详细页.html" class="navigation navigation-next " aria-label="Next page: 知乎日报-Home-跳转详细页.md"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
