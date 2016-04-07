@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>喜马拉雅-简单版 | Introduction</title>
+        <title>知乎日报-Model | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../就业班第六天-汽车品牌展示/index.html" />
+    <link rel="next" href="../知乎日报/知乎日报-ThemePage页_DailyThemesViewController部分.html" />
     
     
-    <link rel="prev" href="../知乎日报/知乎日报-ThemePage页_DailyThemesViewModel部分.html" />
+    <link rel="prev" href="../知乎日报/知乎日报-设置页.html" />
     
 
         
@@ -57,9 +57,9 @@
         
         
     <div class="book"
-        data-level="2"
-        data-chapter-title="喜马拉雅-简单版"
-        data-filepath="喜马拉雅-简单版/README.md"
+        data-level="1.12"
+        data-chapter-title="知乎日报-Model"
+        data-filepath="知乎日报/知乎日报-Model.md"
         data-basepath=".."
         data-revision="Wed Apr 06 2016 18:57:59 GMT-0700 (PDT)"
         data-innerlanguage="">
@@ -278,7 +278,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.12" data-path="知乎日报/知乎日报-Model.html">
+        <li class="chapter active" data-level="1.12" data-path="知乎日报/知乎日报-Model.html">
             
                 
                     <a href="../知乎日报/知乎日报-Model.html">
@@ -343,7 +343,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2" data-path="喜马拉雅-简单版/index.html">
+        <li class="chapter " data-level="2" data-path="喜马拉雅-简单版/index.html">
             
                 
                     <a href="../喜马拉雅-简单版/index.html">
@@ -436,96 +436,156 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p>1&#x3001;06&#x559C;&#x9A6C;&#x62C9;&#x96C5;&#x6848;&#x4F8B;01</p>
+                        <h1 id="&#x77E5;&#x4E4E;&#x65E5;&#x62A5;model">&#x77E5;&#x4E4E;&#x65E5;&#x62A5;-Model</h1>
+<h2 id="dailynewscontent&#x7528;&#x5230;&#x7684;api&#x548C;&#x6570;&#x636E;&#x6A21;&#x578B;">DailyNewsContent&#x7528;&#x5230;&#x7684;API&#x548C;&#x6570;&#x636E;&#x6A21;&#x578B;</h2>
+<h3 id="&#x6570;&#x636E;&#x539F;&#x578B;">&#x6570;&#x636E;&#x539F;&#x578B;</h3>
 <ul>
-<li><p>&#x6548;&#x679C;&#x56FE;</p>
-<ul>
-<li><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459641249552.png" alt="abc"></li>
+<li><a href="http://news-at.zhihu.com/api/3/news/3983436" target="_blank">http://news-at.zhihu.com/api/3/news/3983436</a></li>
 </ul>
-</li>
-<li><p>&#x5229;&#x7528;xib&#x62D6;&#x5165;scrollerview&#xFF0C;&#x548C;&#x51E0;&#x5F20;UIImage</p>
-</li>
-</ul>
-<p>2&#x3001;07&#x559C;&#x9A6C;&#x62C9;&#x96C5;&#x6848;&#x4F8B;02</p>
-<ul>
-<li><p>&#x5229;&#x7528;xib&#x62D6;&#x5165;&#x4E0B;&#x9762;&#x56FE;&#x7247;</p>
-<ul>
-<li><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459642158852.png" alt=""></li>
-</ul>
-</li>
-<li><p>&#x8BA1;&#x7B97;contentsize</p>
-</li>
-</ul>
-<pre><code>- (void)viewDidLoad {
-  [super viewDidLoad];
-  CGFloat maxH = CGRectGetMaxY(self.lastImgView.frame);
-  //&#x8BBE;&#x7F6E;UIScrollView&#x7684;contentSize
-  self.scrollView.contentSize = CGSizeMake(0, MaxH);
+<pre><code>{
+    &quot;body&quot;: ...,
+    &quot;image_source&quot;: &quot;SIGitas MATulis / CC BY-SA&quot;,
+    &quot;title&quot;: &quot;&#x4E3A;&#x4EC0;&#x4E48;&#x4ECA;&#x5929;&#x5F88;&#x591A;&#x4EBA;&#x7167;&#x76F8;&#x559C;&#x6B22;&#x6446; V &#x624B;&#x52BF;&#xFF1F;&quot;,
+    &quot;image&quot;: &quot;http://p2.zhimg.com/55/c3/55c3296b5fb9bcc68c938242e4da8994.jpg&quot;,
+    &quot;share_url&quot;: &quot;http://daily.zhihu.com/story/3983436&quot;,
+    &quot;js&quot;: 
+    [
+      &quot;http://news-at.zhihu.com/js/story.js?v=97942&quot;
+    ],
+    &quot;ga_prefix&quot;: &quot;062118&quot;,
+    &quot;type&quot;: &#x200B;0,
+    &quot;id&quot;: &#x200B;3983436,
+    &quot;css&quot;: 
+    [
+        &quot;http://news-at.zhihu.com/css/news_qa.auto.css?v=77778&quot;
+    ]
 }
-</code></pre><ul>
-<li>&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x504F;&#x79FB;</li>
-</ul>
-<pre><code>  //&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x6EDA;&#x52A8;&#x4F4D;&#x7F6E;
-  self.scrollView.contentOffset = CGPointMake(0, -74);
-</code></pre><ul>
-<li>&#x8BBE;&#x7F6E;&#x5411;&#x4E0A;&#x5185;&#x8FB9;&#x8DDD;</li>
-</ul>
-<pre><code>  //&#x8BBE;&#x7F6E;&#x4E0A;&#x8FB9;&#x8DDD;&#x4E3A;74
-  self.scrollView.contentInset = UIEdgeInsetsMake(74, 0, 0, 0);
-</code></pre><ul>
-<li>&#x5229;&#x7528;xib&#x5B9E;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x90E8;&#x5206;</li>
-</ul>
-<p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459643927234.png" alt=""></p>
-<p>3&#x3001;11&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;01-&#x5B9E;&#x73B0;&#x6A2A;&#x5411;&#x6EDA;&#x52A8;</p>
+</code></pre><h3 id="&#x6570;&#x636E;&#x8F6C;&#x6A21;&#x578B;">&#x6570;&#x636E;&#x8F6C;&#x6A21;&#x578B;</h3>
 <ul>
-<li><p>&#x6548;&#x679C;
-<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459644067792.png" alt=""></p>
-</li>
-<li><p>&#x52A0;&#x5165;5&#x5F20;&#x56FE;&#x7247;&#xFF0C;UIImage,&#x5E76;&#x4E14;&#x8BA1;&#x7B97;contentsize&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x80FD;&#x5206;&#x9875;&#x6548;&#x679C;
-<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459644679769.png" alt=""></p>
-</li>
-<li><p>&#x9690;&#x85CF;&#x6EDA;&#x52A8;&#x6307;&#x793A;&#x5668;</p>
+<li>&#x5176;&#x4E2D;ID&#x8F6C;&#x4E3A;storyID</li>
+<li>recommenders&#x6CA1;&#x6709;</li>
+</ul>
+<pre><code>@property(copy,nonatomic)NSString *body;
+@property(copy,nonatomic)NSString *image_source;
+@property(copy,nonatomic)NSString *title;
+@property(copy,nonatomic)NSString *image;
+@property(copy,nonatomic)NSNumber *storyID;//ID-&gt;storyID
+@property(copy,nonatomic)NSArray *css;
+@property(copy,nonatomic)NSString *share_url;
+@property(strong,nonatomic)NSArray *recommenders;//&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x6CA1;&#x6709;
+@property(strong,nonatomic)NSNumber *type;
+</code></pre><h3 id="&#x66F4;&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x5C01;&#x88C5;">&#x66F4;&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x5C01;&#x88C5;</h3>
+<pre><code>@property(copy,nonatomic)NSNumber *loadedStoryID;
+@property(strong,nonatomic)NSMutableArray *storiesID;
+@property(strong,nonatomic)StoryContentModel *storyModel;
+@property(copy,nonatomic)NSString *imageURLString;
+@property(copy,nonatomic)NSAttributedString *titleAttText;
+@property(copy,nonatomic)NSString *imaSourceText;
+@property(copy,nonatomic)NSString *htmlStr;
+@property(copy,nonatomic)NSString *share_URL;
+@property(copy,nonatomic)NSNumber *storyType;
+@property(strong,nonatomic)NSArray *recommenders;
+</code></pre><h2 id="leftmenu&#x7528;&#x5230;&#x7684;api&#x548C;&#x6570;&#x636E;&#x6A21;&#x578B;">LeftMenu&#x7528;&#x5230;&#x7684;API&#x548C;&#x6570;&#x636E;&#x6A21;&#x578B;</h2>
 <ul>
-<li><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459644758649.png" alt=""></li>
+<li><a href="http://news-at.zhihu.com/api/4/themes" target="_blank">http://news-at.zhihu.com/api/4/themes</a></li>
 </ul>
-</li>
-</ul>
-<p>4&#x3001;12&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;02-&#x5B9E;&#x73B0;&#x5206;&#x9875;&#x6307;&#x793A;&#x5668;</p>
+<pre><code>{
+
+    &quot;limit&quot;: &#x200B;1000,
+    &quot;subscribed&quot;: [ ],
+    &quot;others&quot;: [
+      {
+        &quot;color&quot;: &#x200B;15007,
+        &quot;thumbnail&quot;: &quot;http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg&quot;,
+        &quot;description&quot;: &quot;&#x4E86;&#x89E3;&#x81EA;&#x5DF1;&#x548C;&#x522B;&#x4EBA;&#xFF0C;&#x4E86;&#x89E3;&#x5F7C;&#x6B64;&#x7684;&#x6B32;&#x671B;&#x548C;&#x5C40;&#x9650;&#x3002;&quot;,
+        &quot;id&quot;: &#x200B;13,
+        &quot;name&quot;: &quot;&#x65E5;&#x5E38;&#x5FC3;&#x7406;&#x5B66;&quot;
+},...]
+</code></pre><h3 id="&#x6570;&#x636E;&#x8F6C;&#x6A21;&#x578B;">&#x6570;&#x636E;&#x8F6C;&#x6A21;&#x578B;</h3>
 <ul>
-<li><p>&#x6DFB;&#x52A0;&#x5206;&#x9875;&#x5668;<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459644865413.png" alt=""></p>
+<li>limit&#x6570;&#x636E;&#x5FFD;&#x7565;</li>
+<li>subscribed &#x548C; oterhs &#x6570;&#x636E;&#x6A21;&#x578B;&#x90FD;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;</li>
+<li>&#x5176;&#x4E2D;color, thumbnail&#xFF0C;description&#x5FFD;&#x7565;</li>
+<li>ID-&gt;themeID</li>
+</ul>
+<pre><code>@interface ThemeItemModel : NSObject
+
+@property(copy,nonatomic) NSString *name;
+@property(copy,nonatomic) NSNumber *themeID;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dic;
+@end
+</code></pre><h2 id="themepage&#x7684;api&#x548C;&#x6570;&#x636E;&#x6A21;&#x578B;">ThemePage&#x7684;API&#x548C;&#x6570;&#x636E;&#x6A21;&#x578B;</h2>
 <ul>
-<li><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645230138.png" width="210"></li>
+<li><a href="http://news-at.zhihu.com/api/4/theme/13" target="_blank">http://news-at.zhihu.com/api/4/theme/13</a> </li>
 </ul>
-</li>
-<li><p>&#x8BA1;&#x7B97;&#x6EDA;&#x52A8;&#x91CF;&#xFF0C;&#x8BBE;&#x7F6E;pagecontrol
-<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645311891.png" width="279"></p>
-</li>
-</ul>
-<p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645690870.png" width="393"></p>
+<pre><code>{
+    &quot;stories&quot;: [
+    {
+        &quot;images&quot;: 
+        [
+            &quot;http://pic2.zhimg.com/878b8960b617bfb4721a103e24a0509d.jpg&quot;
+        ],
+        &quot;type&quot;: &#x200B;0,
+        &quot;id&quot;: &#x200B;7785695,
+        &quot;title&quot;: &quot;Necromanov&#xFF1A;&#x5206;&#x88C2;&#x7EA2;&#x6D77;&#xFF1A;&#x8F90;&#x5C04;4&#x7684;&#x55A7;&#x56A3;&#x548C;&#x4E89;&#x8BAE;&quot;
+    }, ...],
+    &quot;description&quot;: &quot;&#x5982;&#x679C;&#x4F60;&#x559C;&#x6B22;&#x6E38;&#x620F;&#xFF0C;&#x5C31;&#x4ECE;&#x8FD9;&#x91CC;&#x5F00;&#x59CB;&quot;,
+    &quot;background&quot;: &quot;http://p2.zhimg.com/55/e0/55e06f8fe322fd87b3261b204bae4786.jpg&quot;,
+    &quot;color&quot;: &#x200B;59647,
+    &quot;name&quot;: &quot;&#x5F00;&#x59CB;&#x6E38;&#x620F;&quot;,
+    &quot;image&quot;: &quot;http://p3.zhimg.com/64/5c/645cde143c9a371005f3f749366cffad.jpg&quot;,
+    editors&quot;: [
+    {
+        &quot;url&quot;: &quot;http://www.zhihu.com/people/necromanov&quot;,
+        &quot;bio&quot;: &quot;&#x6218;&#x7565;&#x822A;&#x7A7A;&#x519B;&#x65D7;&#x8230;&#x7684;&#x5143;&#x5E05;&quot;,
+        &quot;id&quot;: &#x200B;3,
+        &quot;avatar&quot;: &quot;http://pic4.zhimg.com/3553d57db_m.jpg&quot;,
+        &quot;name&quot;: &quot;Necromanov&quot;
+    }, ...]
+    &quot;image_source&quot;: &quot;&quot;
+}
+</code></pre><h3 id="&#x6570;&#x636E;&#x8F6C;&#x6A21;&#x578B;">&#x6570;&#x636E;&#x8F6C;&#x6A21;&#x578B;</h3>
+<pre><code>@property (strong,nonatomic) NSMutableArray *stories;
+@property (strong,nonatomic) NSString *imageURLStr;
+@property (strong,nonatomic) NSString *name;
+@property (strong,nonatomic) NSArray *editors;
+</code></pre><h2 id="storymodel">StoryModel</h2>
 <ul>
-<li>&#x6EDA;&#x52A8;&#x5230;&#x4E00;&#x534A;&#x7684;&#x65F6;&#x5019;&#xFF0C;pagecontrol&#x5C31;&#x5E94;&#x8BE5;&#x5207;&#x6362;&#x5230;&#x53E6;&#x5916;&#x4E00;&#x9875;
-<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645754865.png" width="307"></li>
+<li><a href="http://news-at.zhihu.com/api/3/news/latest" target="_blank">http://news-at.zhihu.com/api/3/news/latest</a></li>
 </ul>
-<p>5&#x3001;13&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;03-&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x6EDA;&#x52A8;</p>
-<ul>
-<li>&#x5728;viewdid&#x52A0;&#x5165;&#x5B9A;&#x65F6;&#x5668;</li>
-</ul>
-<p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645790305.png" width="400"></p>
-<p>6&#x3001;14&#x56FE;&#x7247;&#x8F6E;&#x64AD;&#x5668;04-&#x4FEE;&#x6B63;Bug
-<img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645833822.png" width="261"></p>
-<p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645857349.png" width="398"></p>
-<ul>
-<li><p>&#x5F53;&#x591A;&#x4E2A;scroll&#x5728;&#x540C;&#x4E00;&#x4E2A;controller&#x91CC;&#x9762;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x76F4;&#x62D6;&#x52A8;&#x53E6;&#x5916;&#x4E00;&#x4E2A;scrollview&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E3B;&#x7EBF;&#x7A0B;&#x5C31;&#x4E0D;&#x4F1A;&#x5904;&#x7406;timer&#x7684;&#x4E8B;&#x60C5;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;timer&#x7684;&#x4F18;&#x5148;&#x7EA7;</p>
-<ul>
-<li><p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645886837.png" width="158"></p>
-</li>
-<li><p><img src="http://7xs6js.com1.z0.glb.clouddn.com/2016/1459645901063.png" width="355"></p>
-</li>
-</ul>
-</li>
-</ul>
-<footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x7FFB;&#x8FD9;&#x4E2A;&#x5899; 2016 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2016-04-02 18:19:39
+<pre><code>{
+  &quot;date&quot;:&quot;20140621&quot;,
+  &quot;stories&quot;:[{
+  &quot;title&quot;:&quot;&#x773C;&#x82B1;&#x7F2D;&#x4E71;&#x7684;&#x65F6;&#x88C5;&#x5468;&#x4E0A;&#xFF0C;&#x773C;&#x775B;&#x4E0D;&#x80FD;&#x53EA;&#x76EF;&#x7740;&#x6A21;&#x7279;&quot;,
+  &quot;share_url&quot;:&quot;http://daily.zhihu.com/story/3980042&quot;,
+  &quot;ga_prefix&quot;:&quot;062120&quot;,
+  &quot;images&quot;:[&quot;http://p3.zhimg.com/24/7b/247bcebba402d03c48a036f97f65c7de.jpg&quot;],
+  &quot;type&quot;:0,
+  &quot;id&quot;:3980042},, ... ], &quot;top_stories&quot;:[{
+    &quot;title&quot;:&quot;&#x4E3A;&#x4EC0;&#x4E48;&#x4ECA;&#x5929;&#x5F88;&#x591A;&#x4EBA;&#x7167;&#x76F8;&#x559C;&#x6B22;&#x6446; V &#x624B;&#x52BF;&#xFF1F;&quot;,
+    &quot;image&quot;:&quot;http://p2.zhimg.com/55/c3/55c3296b5fb9bcc68c938242e4da8994.jpg&quot;,
+    &quot;share_url&quot;:&quot;http://daily.zhihu.com/story/3983436&quot;,
+    &quot;ga_prefix&quot;:&quot;062118&quot;,
+    &quot;type&quot;:0,
+    &quot;id&quot;:3983436},, ... ]
+}
+
+date : &#x65E5;&#x671F;
+stories : &#x5F53;&#x65E5;&#x65B0;&#x95FB;
+title : &#x65B0;&#x95FB;&#x6807;&#x9898;
+image : &#x56FE;&#x50CF;&#x5730;&#x5740;
+share_ur: &#x4F9B;&#x5728;&#x7EBF;&#x67E5;&#x770B;&#x5185;&#x5BB9;&#x4E0E;&#x5206;&#x4EAB;&#x81F3; SNS &#x7528;&#x7684; URL
+ga_prefix : &#x4F9B; Google Analytics &#x4F7F;&#x7528;
+&#x5185;&#x5BB9;&#x83B7;&#x53D6;
+</code></pre><pre><code>@property(copy,nonatomic)NSString *title;   //&#x65E5;&#x62A5;&#x6807;&#x9898;
+@property(copy,nonatomic)NSNumber *storyID; //&#x65E5;&#x62A5;id
+@property(strong,nonatomic)NSArray *images; //&#x56FE;&#x7247;url&#x6570;&#x7EC4;
+@property(assign,nonatomic)BOOL isMultipic; //&#x662F;&#x5426;&#x591A;&#x56FE;
+@property(strong,nonatomic)NSNumber *type;  //&#x65E5;&#x62A5;&#x7C7B;&#x578B;
+@property(copy,nonatomic)NSString *image;   //&#x56FE;&#x7247;
+</code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; &#x7FFB;&#x8FD9;&#x4E2A;&#x5899; 2016 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2016-04-06 18:39:50
 </span></footer>
                     
                     </section>
@@ -536,10 +596,10 @@
         </div>
 
         
-        <a href="../知乎日报/知乎日报-ThemePage页_DailyThemesViewModel部分.html" class="navigation navigation-prev " aria-label="Previous page: 知乎日报-ThemePage页_DailyThemesViewModel部分"><i class="fa fa-angle-left"></i></a>
+        <a href="../知乎日报/知乎日报-设置页.html" class="navigation navigation-prev " aria-label="Previous page: 知乎日报-设置页"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../就业班第六天-汽车品牌展示/index.html" class="navigation navigation-next " aria-label="Next page: 就业班第六天-汽车品牌展示"><i class="fa fa-angle-right"></i></a>
+        <a href="../知乎日报/知乎日报-ThemePage页_DailyThemesViewController部分.html" class="navigation navigation-next " aria-label="Next page: 知乎日报-ThemePage页_DailyThemesViewController部分"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
